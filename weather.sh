@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 METRIC=0 # 0 for F, 1 for C
 

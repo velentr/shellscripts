@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 volume=`amixer get Master | grep Mono:`
 

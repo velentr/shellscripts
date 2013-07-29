@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 cmd=`echo -e "add\ninsert\nclear\ncrop\nlistall\nload\nls\nlsplaylists\nnext\npause\nplay\nprev\nrandom\nrepeat\nsingle\nconsume\nsave\nshuffle\nstop\ntoggle\nupdate\nstart mpd\nkill mpd" | dmenu -i -p "$(mpc -f %file% | head -n 1 | sed 's/.mp3//g')"`
 

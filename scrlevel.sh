@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 DIR="/sys/class/backlight/acpi_video1/"
 
