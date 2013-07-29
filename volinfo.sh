@@ -2,8 +2,8 @@
 
 volume=`amixer get Master | grep Mono:`
 
-if [[ `grep off <<< $volume` ]]; then
+if [ `echo $volume | grep off` ]; then
     echo Mute
 else
-    echo `awk '{ print $4 }' <<< $volume | sed 's/\[//g;s/\]//g'`
+    echo `echo $volume | awk '{ print $4 }' | sed 's/\[//g;s/\]//g'`
 fi

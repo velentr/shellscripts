@@ -1,6 +1,28 @@
 #!/bin/sh
 
-cmd=`echo -e "add\ninsert\nclear\ncrop\nlistall\nload\nls\nlsplaylists\nnext\npause\nplay\nprev\nrandom\nrepeat\nsingle\nconsume\nsave\nshuffle\nstop\ntoggle\nupdate\nstart mpd\nkill mpd" | dmenu -i -p "$(mpc -f %file% | head -n 1 | sed 's/.mp3//g')"`
+cmd=`echo "add
+insert
+clear
+crop
+listall
+load
+ls
+lsplaylists
+next
+pause
+play
+prev
+random
+repeat
+single
+consume
+save
+shuffle
+stop
+toggle
+update
+start mpd
+kill mpd" | dmenu -i -p "$(mpc -f %file% | head -n 1 | sed 's/.mp3//g')"`
 
 case "$cmd" in
     add)
@@ -40,16 +62,20 @@ case "$cmd" in
         mpc -q prev
         ;;
     random)
-        mpc -q random `echo -e "on\noff" | dmenu -i -p 'random: '`
+        mpc -q random `echo "on
+off" | dmenu -i -p 'random: '`
         ;;
     repeat)
-        mpc -q repeat `echo -e "on\noff" | dmenu -i -p 'repeat: '`
+        mpc -q repeat `echo "on
+off" | dmenu -i -p 'repeat: '`
         ;;
     single)
-        mpc -q single `echo -e "on\noff" | dmenu -i -p 'single: '`
+        mpc -q single `echo "on
+off" | dmenu -i -p 'single: '`
         ;;
     consume)
-        mpc -q consume `echo -e "on\noff" | dmenu -i -p 'consume: '`
+        mpc -q consume `echo "on
+off" | dmenu -i -p 'consume: '`
         ;;
     save)
         mpc -q save `echo "" | dmenu -i -p 'playlist name: '`
