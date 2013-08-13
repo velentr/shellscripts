@@ -3,8 +3,8 @@
 BOOKMARKS="$HOME/.bookmarks"
 BROWSER="luakit"
 
-PAGENAME=`awk '{print $1}' < $BOOKMARKS | sed 's/_/\ /g' | sort | dmenu -i | sed 's/\ /_/g'`
+PAGENAME=`cut -f1 -d' ' < $BOOKMARKS | sed 's/_/\ /g' | sort | dmenu -i | sed 's/\ /_/g'`
 
-[ $PAGENAME ] && WEBPAGE=`cat $BOOKMARKS | grep -w $PAGENAME | awk '{print $2}'`
+[ $PAGENAME ] && WEBPAGE=`cat $BOOKMARKS | grep -w $PAGENAME | cut -f2 -d' '`
 
 [ $WEBPAGE ] && $BROWSER $WEBPAGE &
