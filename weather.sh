@@ -7,4 +7,11 @@ if [ -z $1 ]; then
     exit 0;
 fi
 
-curl -s http://rss.accuweather.com/rss/liveweather_rss.asp\?metric\=${METRIC}\&locCode\=$1 | grep -i "<title>currently" | sed 's/^.*Currently: //g;s/\(.*\)F.*$/\1F/g;s/:/,/g'
+WEATHER=`curl -s http://rss.accuweather.com/rss/liveweather_rss.asp\?metric\=${METRIC}\&locCode\=$1 | grep -i "<title>currently" | sed 's/^.*Currently: //g;s/\(.*\)F.*$/\1F/g;s/:/,/g'`
+
+if [ -z "$WEATHER" ]; then
+    echo "Connection error."
+    exit 1;
+fi
+
+echo "$WEATHER"
