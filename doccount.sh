@@ -3,7 +3,7 @@
 count=0
 
 for f in *.pdf; do
-    count=`expr $count + $(pdfinfo "$f" 2> /dev/null | grep Pages | awk '{ print $2 }')`
+    count=`expr $count + $(pdfinfo "$f" 2> /dev/null | grep -a -e Pages | awk '{ print $2 }')`
 done
 
 for f in *.djvu; do
