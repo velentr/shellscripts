@@ -1,7 +1,7 @@
 #!/bin/sh
 
 DIR="$HOME/images/xkcd"
-VIEWER="sxiv -f"
+VIEWER="feh"
 
 TITLE=`ls $DIR | sed 's/_/\ /g;s/.png//g' | dmenu -i | sed 's/\ /_/g'`
 if [ $TITLE ]; then
