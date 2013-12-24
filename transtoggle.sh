@@ -5,7 +5,7 @@ if pgrep xcompmgr; then
     pkill xcompmgr &
 else
     echo "Turning xcompmgr ON"
-    xcompmgr -c &
+    xcompmgr -n -f -F -D8 &
 fi
 
 exit 0
