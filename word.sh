@@ -1,6 +1,6 @@
 #!/bin/sh
 
-terminal="st -e"
+terminal="urxvt -e"
 tmpfile="/tmp/ddict.lookup"
 
 word=$(xsel -o | dmenu -p 'Dict Lookup:') || exit
