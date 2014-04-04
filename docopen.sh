@@ -4,15 +4,15 @@ VIEWER="zathura"
 
 CUR="$HOME"
 
-while [ $CUR ] && [ -d $CUR ]
+while [ "$CUR" ] && [ -d "$CUR" ]
 do
-    cd $CUR
+    cd "$CUR"
     CUR=`echo "$(ls | grep -e "\.pdf" -e "\.djvu" -e "\.ps")
 $(ls -d */)" | sed '/^$/d' | sort | dmenu`
 done
 
-if [ $CUR ] && [ -f $CUR ]
+if [ "$CUR" ] && [ -f "$CUR" ]
 then
-    $VIEWER $CUR
+    $VIEWER "$CUR"
 fi
 
