@@ -5,7 +5,7 @@ if pgrep compton; then
     pkill compton &
 else
     echo "Turning xcompmgr ON"
-    compton -c -f -i0.8 -D8 -b
+    compton -c -f -i0.7 -D8 -b
 fi
 
 exit 0
