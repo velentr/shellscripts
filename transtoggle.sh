@@ -1,11 +1,11 @@
 #!/bin/sh
 
-if pgrep xcompmgr; then
+if pgrep compton; then
     echo "Turning xcompmgr OFF"
-    pkill xcompmgr &
+    pkill compton &
 else
     echo "Turning xcompmgr ON"
-    xcompmgr -n -f -F -D8 &
+    compton -c -f -i0.8 -D8 -b
 fi
 
 exit 0
