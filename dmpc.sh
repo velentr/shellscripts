@@ -22,7 +22,7 @@ stop
 toggle
 update
 start mpd
-kill mpd" | dmenu -i -p "$(mpc -f %file% | head -n 1 | sed 's/.mp3//g')"`
+kill mpd" | dmenu -i -p "$(mpc | head -n 1 | sed 's/.mp3//g')"`
 
 case "$cmd" in
     add)
