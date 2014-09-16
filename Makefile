@@ -1,8 +1,7 @@
 # Just install the scripts in my home directory...
 
 DESTDIR = $(HOME)/bin
-SOURCE  =  checkkey.sh dbused.sh dmpc.sh doccount.sh docopen.sh docsiz.sh ipconnect.sh scrlevel.sh termcolor.sh transtoggle.sh viewdoc.sh volinfo.sh weather.sh websites.sh word.sh xkcdget.sh xkcd.sh
-OBJECTS =  checkkey dbused dmpc doccount docopen docsiz ipconnect scrlevel termcolor transtoggle viewdoc volinfo weather websites word xkcdget xkcd
+OBJECTS =  checkkey cntcmds dbused dmpc doccount docopen docsiz ipconnect scrlevel termcolor transtoggle viewdoc volinfo weather websites word xkcdget xkcd
 
 install: $(OBJECTS)
 

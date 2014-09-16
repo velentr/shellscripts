@@ -1,6 +1,6 @@
 #!/bin/sh
 
-DIR="/sys/class/backlight/acpi_video1/"
+DIR="/sys/class/backlight/intel_backlight/"
 
 cur=`cat $DIR/brightness`
 max=`cat $DIR/max_brightness`
