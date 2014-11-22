@@ -22,14 +22,14 @@ stop
 toggle
 update
 start mpd
-kill mpd" | dmenu -i -p "$(mpc | head -n 1 | sed 's/.mp3//g')"`
+kill mpd" | rofi -dmenu -p "$(mpc | head -n 1 | sed 's/.mp3//g')"`
 
 case "$cmd" in
     add)
-        mpc -q add `mpc -q listall | sort | dmenu -i -p 'add song: '`
+        mpc -q add `mpc -q listall | sort | rofi -dmenu -p 'add song: '`
         ;;
     insert)
-        mpc -q insert `mpc -q listall | sort | dmenu -i -p 'insert song: '`
+        mpc -q insert `mpc -q listall | sort | rofi -dmenu -p 'insert song: '`
         ;;
     clear)
         mpc -q clear
@@ -38,16 +38,16 @@ case "$cmd" in
         mpc -q crop
         ;;
     listall)
-        mpc -q listall | sort | dmenu -i
+        mpc -q listall | sort | rofi -dmenu
         ;;
     load)
-        mpc -q load `mpc -q lsplaylists | sort | dmenu -i -p 'load playlist: '`
+        mpc -q load `mpc -q lsplaylists | sort | rofi -dmenu -p 'load playlist: '`
         ;;
     ls)
-        mpc -q ls | sort | dmenu -i
+        mpc -q ls | sort | rofi -dmenu
         ;;
     lsplaylists)
-        mpc -q lsplaylists | sort | dmenu -i
+        mpc -q lsplaylists | sort | rofi -dmenu
         ;;
     next)
         mpc -q next
@@ -63,22 +63,22 @@ case "$cmd" in
         ;;
     random)
         mpc -q random `echo "on
-off" | dmenu -i -p 'random: '`
+off" | rofi -dmenu -p 'random: '`
         ;;
     repeat)
         mpc -q repeat `echo "on
-off" | dmenu -i -p 'repeat: '`
+off" | rofi -dmenu -p 'repeat: '`
         ;;
     single)
         mpc -q single `echo "on
-off" | dmenu -i -p 'single: '`
+off" | rofi -dmenu -p 'single: '`
         ;;
     consume)
         mpc -q consume `echo "on
-off" | dmenu -i -p 'consume: '`
+off" | rofi -dmenu -p 'consume: '`
         ;;
     save)
-        mpc -q save `echo "" | dmenu -i -p 'playlist name: '`
+        mpc -q save `echo "" | rofi -dmenu -p 'playlist name: '`
         ;;
     shuffle)
         mpc -q shuffle

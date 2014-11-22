@@ -3,7 +3,7 @@
 terminal="urxvt -e"
 tmpfile="/tmp/ddict.lookup"
 
-word=$(xsel -o | dmenu -p 'Dict Lookup:') || exit
+word=$(xsel -o | rofi -dmenu -p 'Dict Lookup:') || exit
 while [ $word != "" ]; do
     oup=$(dict "$word" 2>&1)
     if [ $? -eq 21 ]; then
